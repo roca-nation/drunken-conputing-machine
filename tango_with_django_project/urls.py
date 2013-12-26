@@ -5,7 +5,7 @@ admin.autodiscover()
 from django.conf import settings
 
 urlpatterns = patterns('',
-url(r'^rango/', include('rango.urls')),
+url(r'^rango/', include('rango.urls', namespace='rango')),
 # Examples:
     # url(r'^$', 'tango_with_django_project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
