@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 import datetime
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Category(models.Model):
@@ -30,7 +31,14 @@ class Page(models.Model):
 
 
 
-
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    website = models.URLField(blank = True)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
+    
+    def __unicode__(self):
+        return self.user.username
+    
 
 
 

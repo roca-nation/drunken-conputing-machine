@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 
 {% load static %}
 
-<html>
-    <head>
-        <title>Rango</title>
-    </head>
-    <body>
+{% block title %}About{% endblock %}
+
+{% block body_block %}
+
+<div class="hero-unit">
         <h1><em>Rango</em> says...</h1>
         Here is <strong>About Page!</strong><br />
-        <a href='/rango/'>Index</a><br />
+        <p style='color:brown; font-family:Courier;'>You have visited {{ visits }} times!</p>
+        
         <img src='{% static 'forkit.gif' %}' alt='Picture of Github'/>
-    </body>
-</html>
+</div>
+{% endblock %}
